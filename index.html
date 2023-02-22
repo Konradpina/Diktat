@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diktat</title>
+    <link rel="stylesheet" href="style/testpage.css">
+    <style>
+    .letsstart{
+        margin: auto;
+        display: block;
+        
+       }
+
+       .done{
+        margin: auto;
+        display: block;
+        text-align: center;
+        opacity: 0;
+        transition: all 1s;
+       }
+       .done:disabled{
+        background-color: aqua;
+        color: aquamarine;
+       }
+    
+    .diktat{
+        opacity: 0;
+      }
+
+
+      .solution{
+        font-size: 50px;
+        height: 20px;
+        text-align: center;
+        color: rgb(221, 255, 0);
+      }
+      
+      .geschriben{
+        background-color: rgb(28, 194, 255);
+        border: none;
+        margin: auto;
+        display: block;
+        font-size: 50px;
+        color:rgb(246, 255, 0);
+        transition: all 0.4s;
+      }
+      .geschriben:focus{
+        color: rgb(234, 255, 0);
+        background-color: rgb(0, 0, 255);
+      }
+    </style>
+  </head>
+
+  <body class="background">
+    <h1 class="rittentext " id="head">Schreib was du hörst </h1>
+    <h1 class="solution " id="solution"> </h6>
+    <p class="" id="task-1-text" type="text2">
+    </p>
+    <script src="./test.js"></script>
+    <input placeholder="Hier schreiben" class="geschriben " type="text" onkeyup="test2()"; id = "task2"> 
+    <p>
+      <button id="nochmalknopf" class="done " onclick="readnow()" type="button">Nochmal lesen
+      </button>
+    <button id="losungknopf" class="done " onclick="solution()">lösung anzeigen</button>
+    </p>
+
+    <p id="anfangtext1" class="rittentext">Dein eigenen Text?</p>
+    <p id="anfangtext2" class="yellowtext center">kein problem schreib in einfach hier rein:</p>
+        <p id="anfangtext3" class="center "><textarea id="textvorgabe"></textarea></p>
+        <button id="anfangtext4" onclick="gettxet(); " class="button">loslegen</button>
+
+</html>
+
+
+
+
+
+
+
+
+
+
