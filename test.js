@@ -111,7 +111,7 @@ function readnow( readonetime){
         t = t.replaceAll(")"," klammer zu")
 
 
-        msg.text = `... ${t} `;
+        msg.text = `. ${t} `;
         window.speechSynthesis.speak(msg);
 }
 
