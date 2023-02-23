@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <Head>
+        <script src="./diktat.js"></script>
+        <title>Diktat</title>
+        <link rel="stylesheet" href="./style/diktatstyle.css">
+        
+    </Head>
+    <body class="background">
+        
+        <div class="diktat" hidden="true" id="diktatbox" >
+            <p class="textcolor headline" id="outputdiktat" ></p>
+            <p id="solution" class="textcolor normaltext solution"></p>
+            <input id="inputdiktat" onkeyup="righttext()" class="inputdiktat backgroundcolor textcolor" type="text">
+            <button onclick="readout()" class="button textcolor backgroundcolor">Read Agin</button>
+            <button onclick="solutiontext()" class="button textcolor backgroundcolor">solution</button>
+        </div>
+
+        <div class="startbox" id="startbox">
+            <p class="textcolor headline">Welcome Pleas enter your Text:</p>
+            <textarea id="wishedtext" class="inputdiktat backgroundcolor textcolor"> </textarea>
+            <button onclick="beginndiktat()" class="button textcolor backgroundcolor"> Start</button>
+            <button class="button textcolor backgroundcolor">Start with Sentenses</button>
+
+        </div>
+        
+        
+
+    </body>
+
+</html>
