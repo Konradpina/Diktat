@@ -1,6 +1,6 @@
-var Usertext = "hello"
+var Usertext = ["Bei·spiel"]
 var Wort = 0
-
+var thevoice=1
 
 function beginndiktat(){
     var wishedtext = document.getElementById("wishedtext")
@@ -9,6 +9,15 @@ function beginndiktat(){
     var diktatbox = document.getElementById("diktatbox")
     startbox.hidden= true
     diktatbox.hidden=false
+    readout()
+}
+
+function changevoice(){
+    
+    thevoice++
+    if(thevoice ===5){
+        thevoice=1
+    }
     readout()
 }
 
@@ -49,8 +58,10 @@ function readout(){
     textwirdgelesen = textwirdgelesen.replace(":"," doppel punkt")
 
     var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[thevoice];
     msg.text = `${textwirdgelesen}`
-    window.speechSynthesis.speak(msg);
+    speechSynthesis.speak(msg);
 }
 
 

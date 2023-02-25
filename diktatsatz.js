@@ -79,6 +79,8 @@ function readoutsatz(){
     satzwirdgelesen = satzwirdgelesen.replace(":"," doppel punkt")
 
     var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[thevoice];
     msg.text = `${satzwirdgelesen}`
     window.speechSynthesis.speak(msg);
 }

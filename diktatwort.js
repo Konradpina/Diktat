@@ -79,6 +79,7 @@ function rightcorrectionword(){
     }
     
     if(inputwordcorrection.value === supposedword[Correctioncount]){
+        display1.textContent= `${supposedword[Correctioncount]} != ${wrongword[Correctioncount]}`
         inputwordcorrection.value=""
         Correctioncount++
         correctionword.textContent=wrongword[Correctioncount]
@@ -98,6 +99,8 @@ function readoutword(){
     wordwirdgelesen = wordwirdgelesen.replace(":"," doppel punkt")
 
     var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[thevoice];
     msg.text = `${wordwirdgelesen}`
     window.speechSynthesis.speak(msg);
 }
