@@ -20,7 +20,13 @@ function rightsatz(){
     if (inputsatzdiktat.value == " "){
         inputsatzdiktat.value= ""
     }
+
+    if (inputsatzdiktat.value == " Ende"){
+        return
+    }
+
     
+   
     if(inputsatzdiktat.value === sentence){
         outputdiktatsatz.textContent= outputdiktatsatz.textContent+ " " +sentence
         console.log(outputdiktat.value)
@@ -40,10 +46,13 @@ function rightsatz(){
         }else{
             sentence= " Ende"
         }
+        readoutsatz()
+        }
 
         
-        readoutsatz()
-    }
+
+        
+        
     
     
 }
@@ -57,6 +66,9 @@ function solutionsatz(){
     }
 }
 function readoutsatz(){
+    if (sentence == " Ende"){
+        return
+    }
     var satzwirdgelesen = sentence;
     satzwirdgelesen = satzwirdgelesen.replace(".","punkt")
     satzwirdgelesen = satzwirdgelesen.replace(",","kommar")
