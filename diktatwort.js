@@ -63,7 +63,8 @@ function startcorrection(){
     var diktatcorectionbox = document.getElementById("correctionbox")
     correctionword.textContent=wrongword[Correctioncount]
     diktatcorectionbox.hidden=false
-    correctionhead.textContent=`du hast ${righttimes} richtig geschrieben und ${wrongtimes} falsch`
+    var theprozent= 100*wrongtimes/(righttimes+wrongtimes)
+    correctionhead.textContent=`du hast ${righttimes} richtig geschrieben und ${wrongtimes} falsch. Du hast also ${theprozent}% der wörter falch geschrieben`
     word=supposedword[Correctioncount]
     readoutword()
 
