@@ -62,7 +62,7 @@
     background-color: black;
 }
 .buttoncolor{
-    width: 19%;
+    width: 15%;
     display: inline block;
     
     margin-top: 1%;
@@ -72,7 +72,24 @@
     transition: all 0.4s;
     font-size: 140%;
 }
-
+.buttoncolor:hover{
+    width:17%;
+}
+.bluebutton:hover{
+    background-color: rgb(0, 50, 255);
+}
+.yellowbutton:hover{
+    background-color: rgb(255, 242, 0);
+}
+.redbutton:hover{
+    background-color: red;
+}
+.greenbutton:hover{
+    background-color: rgb(102, 255, 0);
+}
+.randombutton:hover{
+    background-color: rgb(255, 255, 255);
+}
 .startbox{
     color:aqua
 }
@@ -83,4 +100,5 @@
     left: 0;
     width: 90%;
 }
+
 
