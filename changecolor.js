@@ -3,8 +3,8 @@ function colorred(){
     //color = document.getElementById("this")
     
     for (var e=0;e < color.length;e++){
-        color[e].style.color="red"
-        color[e].style.borderColor="red"
+        color[e].style.color="rgb(255, 50, 0)"
+        color[e].style.borderColor="rgb(255, 50, 0)"
         color[e].style.boxShadow= "0 0 0 "
     }
 

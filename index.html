@@ -91,7 +91,17 @@
 
         <div calss="diktat"  hidden="true" id="correctionbox">
             <p id="correctionhead" class="textcolor normaltext solution"></p>
-            <P id =correctionword class="textcolor headline"></P>
+            <div class="correctionwordsgrid">
+                <div></div >
+                <div class="flexbox">
+                    <div class="flex1"></div>
+                    <div><P id ="beforeword" class="textcolor correctionright normaltext"></P></div><div class="norm">&#160;</div>
+                    <div><P id ="correctionword" class="correctionred normaltext"></P></div><div class="normaltext">&#160;</div>
+                    <div><P id ="afterword" class="textcolor correctionleft normaltext"></P></div><div class="normaltext">&#160;</div>
+                    <div class="flex1"></div></div>
+                <div></div>
+            </div>
+            
             <p id="wordsolution" class="textcolor normaltext solution"></p>
             <input id="inputwordcorrection" onkeyup="rightcorrectionword()" class="inputdiktat backgroundcolor textcolor hoverschadow" type="text">
             <div class="buttondiktatgrid">

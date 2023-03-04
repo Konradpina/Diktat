@@ -1,11 +1,13 @@
 var Wordcount= 0
 var Userword="word"
 var word =""
+const beforandafterword=[]
 const wrongword=[] 
 const supposedword=[]
 righttimes= 0
 wrongtimes= 0
 Correctioncount =0
+
 
 function beginnworddiktat(){
     var wishedword = document.getElementById("wishedtext")
@@ -31,8 +33,10 @@ function rightword(){
         if (inputworddiktat.value === word){
             righttimes++
         }else if (inputworddiktat.value != word){
+            
             wrongword.push(inputworddiktat.value)
             supposedword.push(word)
+            beforandafterword.push(Wordcount)
             wrongtimes++;
         }
         inputworddiktat.value=""
@@ -61,10 +65,13 @@ function startcorrection(){
     var diktatwordbox = document.getElementById("diktatwordbox")
     diktatwordbox.hidden=true
     var diktatcorectionbox = document.getElementById("correctionbox")
+    beforeword.textContent=Userword[beforandafterword[Correctioncount]-1]
+    afterword.textContent=Userword[beforandafterword[Correctioncount]+1]
     correctionword.textContent=wrongword[Correctioncount]
     diktatcorectionbox.hidden=false
     var theprozent= 100*wrongtimes/(righttimes+wrongtimes)
-    correctionhead.textContent=`du hast ${righttimes} richtig geschrieben und ${wrongtimes} falsch. Du hast also ${theprozent}% der wörter falch geschrieben`
+    theprozent=Math.round(theprozent)
+    correctionhead.textContent=`${righttimes} were Right, ${wrongtimes} Wrong. Thats ${theprozent}% wrong `
     word=supposedword[Correctioncount]
     readoutword()
 
@@ -82,6 +89,8 @@ function rightcorrectionword(){
         display1.textContent= `${supposedword[Correctioncount]} != ${wrongword[Correctioncount]}`
         inputwordcorrection.value=""
         Correctioncount++
+        beforeword.textContent=Userword[beforandafterword[Correctioncount]-1]
+        afterword.textContent=Userword[beforandafterword[Correctioncount]+1]
         correctionword.textContent=wrongword[Correctioncount]
         word=supposedword[Correctioncount]
         readoutword()
