@@ -12,6 +12,7 @@ Correctioncount =0
 function beginnworddiktat(){
     var wishedword = document.getElementById("wishedtext")
     wishedword = wishedword.value
+    wishedword = wishedword.replace(/(\r\n|\n|\r)/gm, " ")
     Userword = wishedword.split(" ")
     var diktatwordbox = document.getElementById("diktatwordbox")
     startbox.hidden= true

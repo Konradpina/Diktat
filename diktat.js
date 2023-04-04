@@ -5,6 +5,7 @@ var thevoice=1
 function beginndiktat(){
     var wishedtext = document.getElementById("wishedtext")
     wishedtext = wishedtext.value
+    wishedtext =wishedtext.replace(/(\r\n|\n|\r)/gm, " ")
     Usertext = wishedtext.split(" ")
     var diktatbox = document.getElementById("diktatbox")
     startbox.hidden= true

@@ -1,19 +1,28 @@
 var Satz= 0
 var Usersatz="satz"
 var sentence ="n"
+var readagincount= -4
+var readaginl=[]
+
 function beginnsatzdiktat(){
     var wishedsatz = document.getElementById("wishedtext")
     wishedsatz = wishedsatz.value
+    wishedsatz = wishedsatz.replace(/(\r\n|\n|\r)/gm, " ")
     Usersatz = wishedsatz.split(" ")
     var diktatsatzbox = document.getElementById("diktatsatzbox")
     startbox.hidden= true
     diktatsatzbox.hidden=false
-    sentence = Usersatz[Satz]+ " "+ Usersatz[Satz +1]+ " "+ Usersatz[Satz +2]+" "
+    sentence = Usersatz[Satz]+ " "+ Usersatz[Satz +1]+ " "+ Usersatz[Satz +2]+" ";
+    readaginl = sentence.split("")
     readoutsatz()
 }
 
+
+onkeydown()
+
 function rightsatz(){
-    
+    readaginl = sentence.split("")
+    readagin()
     var diktatsatzbox = document.getElementById("diktatsatzbox")
     satzsolution.textContent=""
     //inputdiktat.value = inputdiktat.value.replace(" ","")
@@ -25,12 +34,11 @@ function rightsatz(){
         return
     }
 
-    
-   
     if(inputsatzdiktat.value === sentence){
         outputdiktatsatz.textContent= outputdiktatsatz.textContent+ " " +sentence
         console.log(outputdiktat.value)
         inputsatzdiktat.value=""
+        readagincount=-4;
         if(Satz +5< Usersatz.length){
             Satz++
             Satz++
@@ -83,4 +91,13 @@ function readoutsatz(){
     msg.voice = voices[thevoice];
     msg.text = `${satzwirdgelesen}`
     window.speechSynthesis.speak(msg);
+}
+
+function readagin(){
+    if(readagincount < readaginl.length){
+        readagincount++;
+    }else if(readagincount ===readaginl.length){
+        readoutsatz()
+        readagincount=-4
+    }
 }
