@@ -4,7 +4,7 @@
     <Head>
         <script src="./diktatwort.js"></script>
         <script src="./diktatsatz.js"></script>
-        <script src="./changecolor.js"></script>
+        
         <script src="./diktat.js"></script>
         <title>Diktat</title>
         <link rel="stylesheet" href="./style/diktatstyle.css">
@@ -13,53 +13,60 @@
         </style>
             
     </Head>
-    <body class="background">
-            <div class="startbox" id="startbox">
+    <body class="background marginall">
+        <div id="colorbar" class="colorbanohover backgroundcolor textcolor flexbox">
+            <div class="flex1 ct"><button id="this" onclick="colorred()" class="buttoncolor flex1 redbutton textcolor backgroundcolor hoverschadow">Red</button></div>
+            <div class="flex1 ct"><button onclick="colorgreen()" class="buttoncolor flex1 greenbutton textcolor backgroundcolor hoverschadow">green</button></div>
+            <div class="flex1 ct"><button onclick="colorblue()" class="buttoncolor flex1 bluebutton textcolor backgroundcolor hoverschadow">Blue</button></div>
+            <div class="flex1 ct"><button onclick="coloryellow()" class="buttoncolor flex1 yellowbutton textcolor backgroundcolor hoverschadow">Yellow</button></div>
+            <div class="flex1 ct"><button onclick="randomcolor()" class="buttoncolor flex1 randombutton textcolor backgroundcolor hoverschadow">Random</button> </div>
+            <div class="flex1 ct"><button onclick="partycolor()" class="buttoncolor flex1 randombutton textcolor backgroundcolor hoverschadow">partycolor</button></div>
+        </div>
+        <div class="header backgroundcolor textcolor flexbox" >
+            <div id="timebox" hidden class="flex1 backgroundcolor headerelement textcolor bigtext"><button class="bigtext colorbtn backgroundcolor headbtn textcolor" id="timedisplay" onclick="hidetime()">Time</button></div>
+            <div id="prozentbox" hidden class="flex1 backgroundcolor headerelement textcolor bigtext"><button class="bigtext colorbtn backgroundcolor textcolor headbtn " id="prozentbar" onclick="hideprozent()">0%</button></div>
+            <div class="flex1 backgroundcolor headerelement textcolor"><button class="bigtext colorbtn backgroundcolor textcolor headbtn" onclick="changevoice()">Change voice</button></div>
+            <div class="flex1 backgroundcolor headerelement textcolor"><button id ="colorbarbutton"class="bigtext colorbtn backgroundcolor headbtn textcolor" onclick="">color</button></div>
+        </div>
+        
+        <div id="hidetime" onclick="schowtime()" class="flex1 hidetime textcolor"><button class="bigtext colorbtn textcolor headbtn" >Time</button></div>
+        <div id="hideprozent" onclick="schowprozent()" class="flex1 hideprozent textcolor"><button class="bigtext colorbtn textcolor headbtn" >Prozent</button></div>
 
+        
             
-                <p class="textcolor headline">Welcome Pleas enter your Text:</p>
-                <textarea id="wishedtext" class="inputdiktat backgroundcolor textcolor hoverschadow" placeholder="Your text here"></textarea>
-                <div class="buutongrid">
-                    <div></div>
-                    <div><button onclick="beginndiktat()" class="button textcolor backgroundcolor hoverschadow"> Start</button>
-                    <p class="summarydiktat discribetext textcolor">One word at a time</p></div>
-                    <div><button onclick="beginnsatzdiktat()" class="button textcolor backgroundcolor hoverschadow">Start with Sentenses</button>
-                    <p class="summarydiktat discribetext textcolor">Gives you 3 words a time</p></div>
-                    <div><button onclick="beginnworddiktat()" class="button textcolor backgroundcolor hoverschadow">Words</button>
-                        <p class="summarydiktat discribetext textcolor">Schows your mistakes at the Ende</p></div>
-                    <div></div>
-                </div>
-                
-                
-    
+        <div class="startbox" id="startbox">
+
+        
+            <p class="textcolor headline">Welcome Pleas enter your Text:</p>
+            <textarea id="wishedtext" class="inputdiktat backgroundcolor textcolor hoverschadow" placeholder="Your text here"></textarea>
+            <div class="buutongrid">
+                <div></div>
+                <div><button onclick="beginndiktat()" class="button textcolor backgroundcolor hoverschadow"> Start</button>
+                <p class="summarydiktat discribetext textcolor">One word at a time</p></div>
+                <div><button onclick="beginnsatzdiktat()" class="button textcolor backgroundcolor hoverschadow">Start with Sentenses</button>
+                <p class="summarydiktat discribetext textcolor">Gives you 3 words a time</p></div>
+                <div><button onclick="beginnworddiktat()" class="button textcolor backgroundcolor hoverschadow">Words</button>
+                    <p class="summarydiktat discribetext textcolor">Schows your mistakes at the Ende</p></div>
+                <div></div>
             </div>
+            
+            
+
+        </div>
 
             
         
 
-        <div class="colorbutton">
-            <div class="colorbuttongrid"><div></div><button onclick="changevoice()" class="buttoncolor textcolor backgroundcolor hoverschadow">Voicechange</button></div>
-            <div class="colorbuttongrid">
-            <div></div>
-            <button id="this" onclick="colorred()" class="buttoncolor redbutton textcolor backgroundcolor hoverschadow">Red</button>
-            <button onclick="colorgreen()" class="buttoncolor greenbutton textcolor backgroundcolor hoverschadow">green</button>
-            <button onclick="colorblue()" class="buttoncolor bluebutton textcolor backgroundcolor hoverschadow">Blue</button>
-            <button onclick="coloryellow()" class="buttoncolor yellowbutton textcolor backgroundcolor hoverschadow">Yellow</button> 
-            <button onclick="randomcolor()" class="buttoncolor randombutton textcolor backgroundcolor hoverschadow">Random</button> 
-            <button onclick="partycolor()" class="buttoncolor randombutton textcolor backgroundcolor hoverschadow">partycolor</button>
-            <div></div>
-            </div>
-            
-             
-        </div>
+        
 
         <div class="diktat" hidden="true" id="diktatbox" >
             <p class="textcolor headline" id="outputdiktat" ></p>
             <p id="solution" class="textcolor normaltext solution"></p>
             <input id="inputdiktat" onkeyup="righttext()" class="inputdiktat backgroundcolor textcolor hoverschadow" type="text">
-            <div class="buttondiktatgrid">
+            <div class="buutongrid">
                 <div></div>
                 <button onclick="readout()" class="button textcolor backgroundcolor hoverschadow">Read again</button>
+                <button onclick="hint()" class="button textcolor backgroundcolor hoverschadow">hint</button>
                 <button onclick="solutiontext()" class="button textcolor backgroundcolor hoverschadow">solution</button>
                 <div></div>
             </div>
@@ -114,7 +121,7 @@
         </div>
 
         
-        
+        <script src="./changecolor.js"></script>
         
         
 

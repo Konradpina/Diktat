@@ -77,6 +77,38 @@ function partycolor(){
     }
 }
 
+
+var colorbar = document.getElementById("colorbar");
+var colorbarbutton = document.getElementById("colorbarbutton");
+
+
+colorbarbutton.addEventListener("mouseover", function(event) {
+ colorbar.classList.add("coloroptions")
+ colorbar.classList.remove("colorbanohover")
+
+ 
+});
+colorbarbutton.addEventListener("mouseout", function(event) {
+    
+    colorbar.classList.remove("coloroptions")
+    colorbar.classList.add("colorbanohover")
+   
+    
+   });
+
+colorbar.addEventListener("mouseover", function(event) {
+ colorbar.classList.add("coloroptions")
+ colorbar.classList.remove("colorbanohover")
+
+ 
+});
+colorbar.addEventListener("mouseout", function(event) {
+    colorbar.classList.remove("coloroptions")
+    colorbar.classList.add("colorbanohover")
+   
+    
+   });
+
 // function partycolor(){
 //     color = document.getElementsByClassName("textcolor")
 //     for (var e=0;e < color.length;e++){
@@ -91,3 +123,61 @@ function partycolor(){
 //         color[e].style.boxShadow= "0 0 0 "
 //     }
 // }
+
+
+
+//header:
+function prozent(length, word) {
+    if(length => word){
+        length=length
+        word=word*100
+        var prozentbar =document.getElementById("prozentbar")
+        prozentbar.innerText=`${Math.round(word/length)}%`
+     }else if(length===word){
+       console.log("100%") 
+     }
+}
+
+function time(option){
+    if(option==="start"){
+         timedtime =setInterval(timer, 1000)    
+    }else if(option="stop"){
+        window.clearInterval(timedtime)
+    }
+}
+var seconds=0
+var minutes=0
+var houers=0
+var days=""
+function timer(){
+    seconds++
+    if(seconds===60){
+        seconds=0
+        minutes++
+    }
+    if(minutes===60){
+        minutes=0
+        houers++
+    }
+    if(houers===24){
+        houers=0
+        days++
+    }
+    
+    document.getElementById("timedisplay").innerText=`${houers}:${minutes}:${seconds}`
+}
+ 
+function hidetime(){
+    document.getElementById("hidetime").classList.add("seeheight");
+}
+function schowtime(){
+    document.getElementById("hidetime").classList.remove("seeheight");
+}
+function hideprozent(){
+    document.getElementById("hideprozent").classList.add("seeheight");
+}
+
+function schowprozent(){
+    document.getElementById("hideprozent").classList.remove("seeheight");
+
+}

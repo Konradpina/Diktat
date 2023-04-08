@@ -19,6 +19,9 @@ function beginnworddiktat(){
     diktatwordbox.hidden=false
     word = Userword[Wordcount]+" "
     readoutword()
+    document.getElementById("timebox").hidden=false
+    document.getElementById("prozentbox").hidden=false
+    time("start")
 }
 
 function rightword(){
@@ -43,6 +46,7 @@ function rightword(){
         inputworddiktat.value=""
         Wordcount++
         word = Userword[Wordcount]+" "
+        prozent(Userword.length, Wordcount)
         if (Userword.length === Wordcount ){
             startcorrection()
         }else{
@@ -85,6 +89,7 @@ function rightcorrectionword(){
     if (inputdiktat.value == " "){
         inputdiktat.value= ""
     }
+
     
     if(inputwordcorrection.value === supposedword[Correctioncount]){
         display1.textContent= `${supposedword[Correctioncount]} != ${wrongword[Correctioncount]}`
@@ -95,6 +100,9 @@ function rightcorrectionword(){
         correctionword.textContent=wrongword[Correctioncount]
         word=supposedword[Correctioncount]
         readoutword()
+    }
+    if(Correctioncount=== supposedword.length-1){
+        time("stop")
     }
 }
 

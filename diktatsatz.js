@@ -3,11 +3,14 @@ var Usersatz="satz"
 var sentence ="n"
 var readagincount= -4
 var readaginl=[]
+var prozentcount=0
 
 function beginnsatzdiktat(){
     var wishedsatz = document.getElementById("wishedtext")
     wishedsatz = wishedsatz.value
     wishedsatz = wishedsatz.replace(/(\r\n|\n|\r)/gm, " ")
+    wishedsatz =wishedsatz.replace("  "," ")
+    wishedsatz =wishedsatz.replace("   "," ")
     Usersatz = wishedsatz.split(" ")
     var diktatsatzbox = document.getElementById("diktatsatzbox")
     startbox.hidden= true
@@ -15,10 +18,13 @@ function beginnsatzdiktat(){
     sentence = Usersatz[Satz]+ " "+ Usersatz[Satz +1]+ " "+ Usersatz[Satz +2]+" ";
     readaginl = sentence.split("")
     readoutsatz()
+    document.getElementById("timebox").hidden=false
+    document.getElementById("prozentbox").hidden=false
+    time("start")
 }
 
 
-onkeydown()
+
 
 function rightsatz(){
     readaginl = sentence.split("")
@@ -39,6 +45,7 @@ function rightsatz(){
         console.log(outputdiktat.value)
         inputsatzdiktat.value=""
         readagincount=-4;
+        prozentcount=prozentcount+3
         if(Satz +5< Usersatz.length){
             Satz++
             Satz++
@@ -50,13 +57,16 @@ function rightsatz(){
             sentence = Usersatz[Satz +1]+ " "+ Usersatz[Satz +2]+" "
         }else if (Satz +3< Usersatz.length){
             Satz++
-            sentence = Usersatz[Satz +2]+" "
+            sentence = Usersatz[Satz +2]+""
         }else{
             sentence= " Ende"
         }
+        prozent(Usersatz.length , prozentcount)
         readoutsatz()
         }
-
+        if(Usersatz.length -1 <=prozentcount){
+            time("stop")
+        }
         
 
         
