@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    
+    <Head>
+        <script src="./diktatwort.js"></script>
+        <script src="./diktatsatz.js"></script>
+        
+        <script src="./diktat.js"></script>
+        <title>Diktat</title>
+        <link rel="stylesheet" href="./style/diktatstyle.css">
+        <style>
+            
+        </style>
+            
+    </Head>
+    <body class="background marginall">
+        <div id="colorbar" class="colorbanohover backgroundcolor textcolor flexbox">
+            <div class="flex1 ct"><button id="this" onclick="colorred()" class="buttoncolor flex1 redbutton textcolor backgroundcolor hoverschadow">Red</button></div>
+            <div class="flex1 ct"><button onclick="colorgreen()" class="buttoncolor flex1 greenbutton textcolor backgroundcolor hoverschadow">green</button></div>
+            <div class="flex1 ct"><button onclick="colorblue()" class="buttoncolor flex1 bluebutton textcolor backgroundcolor hoverschadow">Blue</button></div>
+            <div class="flex1 ct"><button onclick="coloryellow()" class="buttoncolor flex1 yellowbutton textcolor backgroundcolor hoverschadow">Yellow</button></div>
+            <div class="flex1 ct"><button onclick="randomcolor()" class="buttoncolor flex1 randombutton textcolor backgroundcolor hoverschadow">Random</button> </div>
+            <div class="flex1 ct"><button onclick="partycolor()" class="buttoncolor flex1 randombutton textcolor backgroundcolor hoverschadow">partycolor</button></div>
+        </div>
+        <div class="header backgroundcolor textcolor flexbox" >
+            <div id="timebox" hidden class="flex1 backgroundcolor headerelement textcolor bigtext"><button class="bigtext colorbtn backgroundcolor headbtn textcolor" id="timedisplay" onclick="hidetime()">Time</button></div>
+            <div id="prozentbox" hidden class="flex1 backgroundcolor headerelement textcolor bigtext"><button class="bigtext colorbtn backgroundcolor textcolor headbtn " id="prozentbar" onclick="hideprozent()">0%</button></div>
+            <div class="flex1 backgroundcolor headerelement textcolor"><button class="bigtext colorbtn backgroundcolor textcolor headbtn" onclick="changevoice()">Change voice</button></div>
+            <div class="flex1 backgroundcolor headerelement textcolor"><button id ="colorbarbutton"class="bigtext colorbtn backgroundcolor headbtn textcolor" onclick="">color</button></div>
+        </div>
+        
+        <div id="hidetime" onclick="schowtime()" class="flex1 hidetime textcolor"><button class="bigtext colorbtn textcolor headbtn" >Time</button></div>
+        <div id="hideprozent" onclick="schowprozent()" class="flex1 hideprozent textcolor"><button class="bigtext colorbtn textcolor headbtn" >Prozent</button></div>
+
+        
+            
+        <div class="startbox" id="startbox">
+
+        
+            <p class="textcolor headline">Welcome Pleas enter your Text:</p>
+            <textarea id="wishedtext" class="inputdiktat backgroundcolor textcolor hoverschadow" placeholder="Your text here"></textarea>
+            <div class="buutongrid">
+                <div></div>
+                <div><button onclick="beginndiktat()" class="button textcolor backgroundcolor hoverschadow"> Start</button>
+                <p class="summarydiktat discribetext textcolor">One word at a time</p></div>
+                <div><button onclick="beginnsatzdiktat()" class="button textcolor backgroundcolor hoverschadow">Start with Sentenses</button>
+                <p class="summarydiktat discribetext textcolor">Gives you 3 words a time</p></div>
+                <div><button onclick="beginnworddiktat()" class="button textcolor backgroundcolor hoverschadow">Words</button>
+                    <p class="summarydiktat discribetext textcolor">Schows your mistakes at the Ende</p></div>
+                <div></div>
+            </div>
+            
+            
+
+        </div>
+
+            
+        
+
+        
+
+        <div class="diktat" hidden="true" id="diktatbox" >
+            <p class="textcolor headline" id="outputdiktat" ></p>
+            <p id="solution" class="textcolor normaltext solution"></p>
+            <input id="inputdiktat" onkeyup="righttext()" class="inputdiktat backgroundcolor textcolor hoverschadow" type="text">
+            <div class="buutongrid">
+                <div></div>
+                <button onclick="readout()" class="button textcolor backgroundcolor hoverschadow">Read again</button>
+                <button onclick="hint()" class="button textcolor backgroundcolor hoverschadow">hint</button>
+                <button onclick="solutiontext()" class="button textcolor backgroundcolor hoverschadow">solution</button>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="diktat" hidden="true" id="diktatsatzbox" >
+            <p class="textcolor headline" id="outputdiktatsatz" ></p>
+            <p id="satzsolution" class="textcolor normaltext solution"></p>
+            <input id="inputsatzdiktat" onkeyup="rightsatz()" class="inputdiktat backgroundcolor textcolor hoverschadow" type="text">
+            <div class="buttondiktatgrid">
+                <div></div>
+                <button onclick="readoutsatz()" class="button textcolor backgroundcolor hoverschadow">Read again</button>
+                <button onclick="solutionsatz()" class="button textcolor backgroundcolor hoverschadow">solution satz</button>
+                <div></div>
+            </div></div>
+
+        <div class="diktat" hidden="true" id="diktatwordbox" >
+            <p class="textcolor headline" id="outputdiktatword" ></p>
+            
+            <input id="inputworddiktat" onkeyup="rightword()" class="inputdiktat backgroundcolor textcolor hoverschadow" type="text">
+            <div class="buttondiktatgrid">
+                <div></div>
+                <button onclick="readoutword()" class="button textcolor backgroundcolor hoverschadow">Read again</button>
+                <button onclick="startcorrection()" class="button textcolor backgroundcolor hoverschadow" >correction</button>
+                <div></div>
+            </div>
+            
+        </div>
+
+        <div calss="diktat"  hidden="true" id="correctionbox">
+            <p id="correctionhead" class="textcolor normaltext solution"></p>
+            <div class="correctionwordsgrid">
+                <div></div >
+                <div class="flexbox">
+                    <div class="flex1"></div>
+                    <div><P id ="beforeword" class="textcolor correctionright normaltext"></P></div><div class="norm">&#160;</div>
+                    <div><P id ="correctionword" class="correctionred normaltext"></P></div><div class="normaltext">&#160;</div>
+                    <div><P id ="afterword" class="textcolor correctionleft normaltext"></P></div><div class="normaltext">&#160;</div>
+                    <div class="flex1"></div></div>
+                <div></div>
+            </div>
+            
+            <p id="wordsolution" class="textcolor normaltext solution"></p>
+            <input id="inputwordcorrection" onkeyup="rightcorrectionword()" class="inputdiktat backgroundcolor textcolor hoverschadow" type="text">
+            <div class="buttondiktatgrid">
+                <div></div>
+                <button onclick="readoutword()" class="button textcolor backgroundcolor hoverschadow">Read again</button>
+                <button onclick="solutionword()" class="button textcolor backgroundcolor hoverschadow">i dont know</button>    
+                <div></div>
+            </div>
+            <div class="textcolor normaltext solution"><i id="display1">1</i</div>
+        </div>
+
+        
+        <script src="./changecolor.js"></script>
+        
+        
+
+    </body>
+
+</html>
