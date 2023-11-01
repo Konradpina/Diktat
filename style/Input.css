@@ -1,0 +1,222 @@
+:root{
+    --bcolor:rgb(255, 255, 255);
+}
+.ct{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 1vh;
+}
+
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+}
+.diktatbox{
+    /* display: flex; */
+    margin-top: 20px;
+    font-size: 40px;
+    align-content: center;
+}
+.text{
+    /* padding: 0;
+    display: block; */
+    background-color: var(--bcolor);
+}
+.textinput{
+    border: 0px;
+    /* display: block; */
+    height: 40px;
+    font-size: 40px;
+    outline: none;
+    background-color: rgb(0, 4, 255);
+    
+    width: 200px;
+    max-width: 100vw;
+
+}
+.text, .textinput,.textdisplay{
+    font-family: 'Gloria Hallelujah', cursive;
+    background-color: rgba(187, 187, 187, 0);
+}
+.textinput:focus{
+    border: 0px;
+
+}
+.textdisplay{
+    display:inline;
+
+
+}
+
+
+
+.inputbox,.languagebox{
+    /* border: var(--hcolor) solid 2px; */
+    border-radius: 1px;
+    position: absolute;
+    top:25vh;
+    min-height: 50vh;
+    width: 70vw;
+    left: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bcolor);
+    box-shadow: 4px 4px 40px gray;
+}
+.inputbox button{
+    background-color:var(--hcolor);
+    font-size: 50px;
+    color: var(--bcolor);
+    border: 2px solid rgba(0, 128, 0, 0);
+    border-radius: 10px;
+    padding: 3% 8%;
+    transition: all 0.3s;
+    box-shadow: 0;
+}
+.inputbox button:hover{
+    border: 2px solid var(--hcolor);
+    background-color: rgb(40, 128, 10);
+    padding: 3% 12%;
+    /* box-shadow: 10px 5px 10px rgb(31, 30, 30); */
+    /* color:var(--hcolor) */
+}
+.inputbox textarea{
+    width: 40vw;
+    border: 2px solid var(--hcolor);
+    
+}
+.languages{
+    min-height: 30vh;
+    width: 70vw;
+    
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.languages button, .loptions button{
+    background-color:var(--hcolor);
+    font-size: 30px;
+    color: var(--bcolor);
+    border: 4px solid rgba(0, 128, 0, 0);
+    border-radius: 25px;
+    width: 70%;
+    transition: all 0.3s;
+    box-shadow: 0;
+    padding: 1% 1%;
+    margin-top:4% ;
+    
+}
+.loptions button{
+    /* min-height: 3vh; */
+    /* max-height: 20vh; */
+    margin: 1vh;
+}
+.languages button:hover, .loptions button:hover{
+    border: 2px solid var(--hcolor);
+    background-color: rgb(255, 255, 255);
+    color: var(--hcolor);
+}
+.languages button .active, .loptions button.active{
+    border: 2px solid var(--hcolor);
+    background-color: rgb(255, 255, 255);
+    color: var(--hcolor);
+}
+.languageoptions{
+    background-color: aquas;
+    border-radius: 1px;
+    position: absolute;
+    top:15vh;
+    min-height: 80vh;
+   
+    width: 90vw;
+    left:5vw;
+    
+    background-color: var(--bcolor);
+    box-shadow: 4px 4px 40px gray;
+    
+    
+}
+
+.loptions{
+    
+    min-height: 60vh;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.ok{
+    margin-top:4% ;
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.languageoptions .ok button{
+    background-color:var(--hcolor);
+    font-size: 30px;
+    color: var(--bcolor);
+    border: 2px solid rgba(0, 128, 0, 0);
+    border-radius: 10px;
+    padding: 1% 3%;
+    transition: all 0.3s;
+    box-shadow: 0;
+    margin: 2%;
+}
+.languageoptions .ok button:hover{
+    border: 2px solid var(--hcolor);
+    background-color: rgb(40, 128, 10);
+    padding: 1% 5%;
+}
+.lerro{
+    position: absolute;
+    top: 20vw;
+    left: 20%;
+    width: 60%;
+    font-size: 40px;
+    text-align: center;
+}
+.lemnu{
+    min-height: 20px;
+}
+
+
+@media only screen and (min-width:1500px){
+    .inputbox,.languagebox,.languages{
+        width: 50vw;
+        left: 25vw;
+    }
+    .inputbox textarea{
+        width: 30vw;
+    }
+    
+}
+@media only screen and (min-width:2000px){
+    .inputbox,.languagebox,.languages{
+        width: 30vw;
+        left: 35vw;
+    }
+    .inputbox textarea{
+        width: 20vw;
+    }
+ 
+}
+@media only screen and (max-width:900px){
+    .loptions{
+        grid-template-columns: 1fr 1fr;
+    }
+ 
+}
+@media only screen and (max-width:700px){
+    .loptions{
+        grid-template-columns: 1fr;
+    }
+ 
+}
